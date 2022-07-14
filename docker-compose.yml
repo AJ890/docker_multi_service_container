@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: multi_service
+    volumes:
+      - ./scripts:/code/scripts/
+    #command: bash -c "ls && python3 script1.py"
+    restart: unless-stopped
+
+
